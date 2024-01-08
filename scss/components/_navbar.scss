@@ -1,0 +1,23 @@
+@use "../abstracts";
+
+.navbar {
+    @include abstracts.screen(lg) {
+        display: none;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        margin-left: -21px;
+        margin-right: -21px;
+    }
+
+    &__item {
+        padding: 4px 21px;
+    }
+
+    &__link {
+        color: #51586a;
+        font-size: 1.8rem;
+    }
+}

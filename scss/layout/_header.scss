@@ -1,0 +1,19 @@
+@use "../abstracts";
+
+.header {
+    &__container {
+        width: min(1330px, 100% - 48px);
+        margin: 0 auto;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include abstracts.screen(lg) {
+            justify-content: initial;
+            flex-direction: row-reverse;
+        }
+    }
+}
