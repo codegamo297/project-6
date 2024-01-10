@@ -42,40 +42,47 @@
         <div class="header__container">
             <div class="header__wrap">
                 <!-- More -->
-                <button class="header__more d-none d-lg-block">
+                <button class="header__more d-none d-lg-block js-toggle" toggle-target="#navbar">
                     <img src="./assets/icons/more.svg" alt="" class="header__more-icon">
                 </button>
 
                 <!-- Email -->
-                <div class="email">
+                <a href="mailto:hi@arif.interactive" class="email">
                     <div class="email__img">
                         <img src="./assets/images/envelop.png" alt="" class="email__icon">
                     </div>
-                    <a href="mailto:hi@arif.interactive" class="email__link">hi@arif.interactive</a>
-                </div>
+                    <span class="email__link">hi@arif.interactive</span>
+                </a>
 
                 <!-- Logo -->
-                <a href="#!" class="logo">
+                <a href="/" class="logo header__logo">
                     <img src="./assets/images/logo.png" alt="logo" class="logo__img">
                 </a>
 
                 <!-- Navbar -->
-                <nav class="navbar">
-                    <ul class="navbar__list">
-                        <li class="navbar__item">
-                            <a href="#!" class="navbar__link">Projects</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#!" class="navbar__link">Journey</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#!" class="navbar__link">Service</a>
-                        </li>
-                        <li class="navbar__item">
-                            <a href="#!" class="navbar__link">Contact</a>
-                        </li>
-                    </ul>
-                </nav>
+                <div>
+                    <nav id="navbar" class="navbar hide">
+                        <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+                            <img src="./assets/icons/arrow-right.svg" alt="">
+                        </button>
+
+                        <ul class="navbar__list">
+                            <li class="navbar__item">
+                                <a href="#!" class="navbar__link">Projects</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="#!" class="navbar__link">Journey</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="#!" class="navbar__link">Service</a>
+                            </li>
+                            <li class="navbar__item">
+                                <a href="#!" class="navbar__link">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
+                </div>
             </div>
         </div>
     </header>

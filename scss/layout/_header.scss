@@ -4,6 +4,10 @@
     &__container {
         width: min(1330px, 100% - 48px);
         margin: 0 auto;
+
+        @include abstracts.screen(md) {
+            border-bottom: 1px solid #d6d3e2;
+        }
     }
 
     &__wrap {
@@ -14,6 +18,21 @@
         @include abstracts.screen(lg) {
             justify-content: initial;
             flex-direction: row-reverse;
+        }
+    }
+
+    &__logo {
+        @include abstracts.screen(lg) {
+            margin-right: auto;
+        }
+    }
+
+    &__more {
+        margin-left: 10px;
+
+        &-icon {
+            width: 46px;
+            height: 46px;
         }
     }
 }

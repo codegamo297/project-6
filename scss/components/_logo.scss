@@ -1,7 +1,14 @@
+@use "../abstracts";
+
 .logo {
     &__img {
         width: 100px;
         height: 100px;
         object-fit: cover;
+
+        @include abstracts.screen(md) {
+            width: 80px;
+            height: 80px;
+        }
     }
 }
