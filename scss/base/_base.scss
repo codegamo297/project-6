@@ -59,3 +59,21 @@ button {
     padding: 0;
     cursor: pointer;
 }
+
+// Button
+.btn {
+    width: 170px;
+    height: 62px;
+    background: #5d3bee;
+
+    color: #fdfdfd;
+    font-size: 1.8rem;
+    font-weight: 700;
+    user-select: none;
+    transition: opacity 0.25s;
+
+    &:hover {
+        opacity: 0.9;
+        cursor: pointer;
+    }
+}
