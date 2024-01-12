@@ -1,6 +1,17 @@
+@use "../abstracts";
+
 .hero {
+    position: relative;
+
     &__inner {
         align-items: center;
+
+        @include abstracts.screen(md) {
+            --grid-gutter-y: 20px;
+
+            flex-direction: column-reverse;
+            margin-top: 30px;
+        }
     }
 
     &__media {
@@ -13,8 +24,8 @@
             display: block;
             position: absolute;
             bottom: 0;
-            left: -20%;
-            width: 140%;
+            left: 0;
+            width: 94%;
             z-index: 0;
         }
     }
@@ -25,6 +36,15 @@
         aspect-ratio: 514/705;
         object-fit: cover;
         z-index: 1;
+
+        @include abstracts.screen(lg) {
+            width: 100%;
+        }
+
+        @include abstracts.screen(lg) {
+            width: 80%;
+            aspect-ratio: 259/355;
+        }
     }
 
     &__heading {
@@ -32,6 +52,19 @@
         font-size: 8rem;
         font-weight: 500;
         line-height: 95%;
+
+        @include abstracts.screen(xl) {
+            font-size: 7rem;
+        }
+
+        @include abstracts.screen(lg) {
+            font-size: 5.2rem;
+        }
+
+        @include abstracts.screen(md) {
+            font-size: 4.2rem;
+            line-height: 119.048%;
+        }
     }
 
     &__desc {
@@ -41,6 +74,13 @@
         color: #51586a;
         font-size: 1.8rem;
         line-height: 166.667%;
+
+        @include abstracts.screen(md) {
+            margin-bottom: 30px;
+            width: 100%;
+            font-size: 1.6rem;
+            line-height: 162.5%;
+        }
     }
 
     &__row {
@@ -55,12 +95,29 @@
         font-weight: 700;
         line-height: 166.667%;
         text-decoration-line: underline;
+
+        @include abstracts.screen(md) {
+            font-size: 1.6rem;
+            line-height: 187.5%;
+        }
+    }
+
+    &__btn {
+        @include abstracts.screen(md) {
+            width: 147px;
+            height: 55px;
+            font-size: 1.6rem;
+        }
     }
 
     &__info-decor {
         position: absolute;
         bottom: 0;
-        right: 0;
+        right: -7%;
+
+        @include abstracts.screen(xl) {
+            right: -10%;
+        }
     }
 }
 
@@ -68,6 +125,14 @@
 .follow {
     margin-top: 104px;
     gap: 15px;
+
+    @include abstracts.screen(xl) {
+        margin-top: 60px;
+    }
+
+    @include abstracts.screen(md) {
+        margin-top: 30px;
+    }
 
     &__desc {
         color: #51586a;
