@@ -1,0 +1,108 @@
+@use "../abstracts";
+
+.client {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include abstracts.screen(xl) {
+        flex-direction: column;
+    }
+
+    &__heading {
+        position: relative;
+        margin-left: 100px;
+        width: 253px;
+
+        color: #080415;
+        font-size: 4.2rem;
+        font-weight: 500;
+        line-height: 119.048%;
+        letter-spacing: -1.68px;
+
+        @include abstracts.screen(xl) {
+            margin-left: 0;
+            width: initial;
+            text-align: center;
+        }
+
+        @include abstracts.screen(lg) {
+            font-size: 3.6rem;
+        }
+
+        @include abstracts.screen(md) {
+            width: 169px;
+            font-size: 2.8rem;
+            line-height: 121.429%;
+            letter-spacing: -1.12px;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 86px;
+            height: 2px;
+            background: #5d3bee;
+            top: 25%;
+            left: -100px;
+
+            @include abstracts.screen(xl) {
+                top: 50%;
+            }
+
+            @include abstracts.screen(lg) {
+                left: 50%;
+                top: 0;
+                translate: -50%;
+            }
+
+            @include abstracts.screen(lg) {
+                width: 48px;
+                top: -5px;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+
+        @include abstracts.screen(xl) {
+            margin-top: 42px;
+        }
+
+        @include abstracts.screen(lg) {
+            flex-direction: column;
+            align-items: initial;
+        }
+    }
+
+    &-left,
+    &-right {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+
+        @include abstracts.screen(md) {
+            gap: 24px 12px;
+        }
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    &__icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    &__name {
+        font-weight: 500;
+        white-space: nowrap;
+    }
+}
