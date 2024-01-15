@@ -1,10 +1,9 @@
 @use "../abstracts";
 
 .hero {
-    position: relative;
-
     &__inner {
         align-items: center;
+        position: relative;
 
         @include abstracts.screen(md) {
             --grid-gutter-y: 20px;
@@ -113,10 +112,10 @@
     &__info-decor {
         position: absolute;
         bottom: 0;
-        right: -7%;
+        right: 0;
 
         @include abstracts.screen(xl) {
-            right: -10%;
+            right: -6%;
         }
     }
 }

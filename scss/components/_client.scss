@@ -2,12 +2,19 @@
 
 .client {
     margin-top: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
 
-    @include abstracts.screen(xl) {
-        flex-direction: column;
+    @include abstracts.screen(lg) {
+        margin-top: 120px;
+    }
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        @include abstracts.screen(xl) {
+            flex-direction: column;
+        }
     }
 
     &__heading {

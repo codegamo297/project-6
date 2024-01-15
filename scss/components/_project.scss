@@ -1,0 +1,162 @@
+@use "../abstracts";
+
+.project {
+    margin-top: 140px;
+    background: #5d3bee;
+
+    @include abstracts.screen(lg) {
+        margin-top: 120px;
+    }
+
+    &__wrap {
+        padding: 86px 0;
+    }
+
+    &__head {
+        display: flex;
+        align-items: center;
+        gap: 160px;
+        margin-bottom: 70px;
+
+        @include abstracts.screen(lg) {
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+        }
+    }
+
+    &__heading {
+        color: #fff;
+        width: 468px;
+
+        @include abstracts.screen(lg) {
+            width: initial;
+        }
+    }
+
+    &__desc {
+        width: 370px;
+        color: #fff;
+
+        @include abstracts.screen(lg) {
+            width: initial;
+        }
+    }
+
+    &-card {
+        position: relative;
+        background: #fbfaff;
+        padding: 24px 24px 24px 34px;
+        overflow: hidden;
+        z-index: 0;
+
+        @include abstracts.screen(lg) {
+            padding: 20px 15px;
+        }
+
+        &::after {
+            content: url(../../assets/images/project-decor.svg);
+            position: absolute;
+            top: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        &__inner {
+            align-items: center;
+        }
+
+        &__title {
+            color: #080415;
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 125%;
+            letter-spacing: -1.28px;
+            white-space: nowrap;
+
+            @include abstracts.screen(lg) {
+                font-size: 24px;
+                line-height: 141.667%;
+                letter-spacing: -0.96px;
+            }
+        }
+
+        &__desc {
+            margin-top: 10px;
+            width: 220px;
+            color: #51586a;
+            font-size: 1.6rem;
+            line-height: 143.75%;
+
+            @include abstracts.screen(xl) {
+                width: initial;
+            }
+
+            @include abstracts.screen(lg) {
+                margin-top: 4px;
+                font-size: 1.4rem;
+                line-height: 142.857%;
+            }
+        }
+
+        &__link {
+            display: block;
+            margin-top: 20px;
+            color: #080415;
+            font-size: 1.8rem;
+            font-weight: 700;
+            line-height: 166.667%;
+            text-decoration-line: underline;
+
+            @include abstracts.screen(lg) {
+                margin-top: 4px;
+                font-size: 1.6rem;
+                line-height: 175%;
+            }
+        }
+
+        &__img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 246/187;
+            object-fit: contain;
+
+            @include abstracts.screen(lg) {
+                width: 66%;
+            }
+
+            @include abstracts.screen(md) {
+                width: 80%;
+            }
+
+            @include abstracts.screen(sm) {
+                width: 100%;
+            }
+        }
+    }
+
+    &-cta {
+        margin-top: 80px;
+        width: 100%;
+
+        display: flex;
+        justify-content: center;
+
+        @include abstracts.screen(lg) {
+            margin-top: 50px;
+        }
+
+        &__btn {
+            background: #fff;
+            color: #080415;
+
+            @include abstracts.screen(lg) {
+                width: 154px;
+                height: 56px;
+
+                font-size: 1.6rem;
+                line-height: 187.5%;
+            }
+        }
+    }
+}

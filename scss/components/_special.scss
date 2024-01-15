@@ -1,8 +1,15 @@
 @use "../abstracts";
 
 .special {
-    position: relative;
     margin-top: 140px;
+
+    @include abstracts.screen(lg) {
+        margin-top: 120px;
+    }
+
+    &__wrap {
+        position: relative;
+    }
 
     &__heading,
     &__desc {
@@ -11,7 +18,7 @@
 
     &__desc {
         margin-top: 20px;
-        margin-bottom: 93px;
+        margin-bottom: 60px;
 
         @include abstracts.screen(lg) {
             margin-bottom: 50px;

@@ -151,9 +151,8 @@ button {
     &-right {
         position: absolute;
         top: 50%;
-
+        cursor: pointer;
         padding: 10px;
-
         filter: brightness(0) saturate(100%) invert(66%) sepia(3%)
             saturate(162%) hue-rotate(127deg) brightness(93%) contrast(88%);
     }
