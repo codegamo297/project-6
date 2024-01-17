@@ -10,6 +10,10 @@
 
     &__wrap {
         padding: 86px 0;
+
+        @include abstracts.screen(lg) {
+            padding: 69px 0 60px;
+        }
     }
 
     &__head {
@@ -17,6 +21,10 @@
         align-items: center;
         gap: 160px;
         margin-bottom: 70px;
+
+        @include abstracts.screen(xl) {
+            gap: 130px;
+        }
 
         @include abstracts.screen(lg) {
             flex-direction: column;
@@ -27,11 +35,6 @@
 
     &__heading {
         color: #fff;
-        width: 468px;
-
-        @include abstracts.screen(lg) {
-            width: initial;
-        }
     }
 
     &__desc {

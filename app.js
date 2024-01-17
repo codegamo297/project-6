@@ -12,71 +12,98 @@ $$(".js-toggle").forEach((button) => {
     button.onclick = (e) => {
         e.preventDefault();
 
-        let isHidden = $(target).classList.contains("hide");
+        const isHidden = $(target).classList.contains("hide");
 
-        if (isHidden) {
-            $(target).classList.remove("hide");
-            $(target).classList.add("show");
-        } else {
-            $(target).classList.remove("show");
-            $(target).classList.add("hide");
-        }
+        $(target).classList.toggle("hide", !isHidden);
+        $(target).classList.toggle("show", isHidden);
     };
 });
 
-// Làm phần lướt của Special
-const arrowLeft = $(".arrow-left");
-const arrowRight = $(".arrow-right");
-const dotsElement = $(".special__dot");
-const dots = dotsElement.querySelectorAll(".dot");
-let totalClick = 0;
+// Làm phần lướt item
+function jsArrow() {
+    let totalClick = 0;
 
-checkClick(totalClick);
+    $$(".js-move").forEach((button) => {
+        const target = button.getAttribute("target-move");
+        const direction = button.getAttribute("direction-arrow");
+        const section = button.getAttribute("section");
+        const targetDot = button.getAttribute("target-dot");
 
-function checkClick(total, lengthList) {
-    total = Math.min(Math.max(total, 0), lengthList);
-    if (!lengthList) total = 0;
+        if (!target) {
+            document.body.innerText = `Cần thêm target-move cho: ${button.outerHTML}`;
+        }
+        if (!direction) {
+            document.body.innerText = `Cần thêm direction-arrow cho: ${button.outerHTML}`;
+        }
+        if (!section) {
+            document.body.innerText = `Cần thêm section cho: ${button.outerHTML}`;
+        }
+        if (!targetDot) {
+            document.body.innerText = `Cần thêm target-dot cho: ${button.outerHTML}`;
+        }
 
-    arrowLeft.classList.toggle("hide", total === 0);
-    arrowLeft.classList.toggle("show", total !== 0);
+        function checkClick(btn, oppositeBtn, total, lengthList) {
+            total = Math.min(Math.max(total, 0), lengthList);
 
-    arrowRight.classList.toggle("hide", total === lengthList);
-    arrowRight.classList.toggle("show", total !== lengthList);
+            btn.classList.toggle("hide", total === 0);
+            btn.classList.toggle("show", total !== 0);
+            oppositeBtn.classList.toggle("hide", total === lengthList);
+            oppositeBtn.classList.toggle("show", total !== lengthList);
 
-    return total;
+            return total;
+        }
+
+        button.onclick = (e) => {
+            e.preventDefault();
+            const oppositeDirection = direction === "left" ? "right" : "left";
+            const oppositeArrow = document.querySelector(
+                `.${String(
+                    section
+                )}__arrow[direction-arrow=${oppositeDirection}]`
+            );
+            const dots = document
+                .querySelector(targetDot)
+                .querySelectorAll(".dot");
+
+            if (direction === "left") {
+                totalClick--;
+                totalClick = checkClick(
+                    button,
+                    oppositeArrow,
+                    totalClick,
+                    $$(target).length - 1
+                );
+
+                dots.forEach((dot) => {
+                    dot.classList.remove("active");
+                    dots[totalClick].classList.add("active");
+                });
+            }
+
+            if (direction === "right") {
+                totalClick++;
+                totalClick = checkClick(
+                    oppositeArrow,
+                    button,
+                    totalClick,
+                    $$(target).length - 1
+                );
+
+                dots.forEach((dot) => {
+                    dot.classList.remove("active");
+                    dots[totalClick].classList.add("active");
+                });
+            }
+
+            $$(target).forEach((item) => {
+                const translateCss = `calc(-${100 * totalClick}%
+                - ${30 * totalClick}px)`;
+                item.style.translate = translateCss;
+            });
+        };
+    });
 }
-
-arrowRight.onclick = () => {
-    totalClick++;
-    totalClick = checkClick(totalClick, $$(".special-item").length - 1);
-
-    $$(".special-item").forEach((item) => {
-        const translateCss = `calc(-${100 * totalClick}%
-            - ${30 * totalClick}px)`;
-        item.style.translate = translateCss;
-    });
-
-    dots.forEach((dot) => {
-        dot.classList.remove("active");
-        dots[totalClick].classList.add("active");
-    });
-};
-
-arrowLeft.onclick = () => {
-    totalClick--;
-    totalClick = checkClick(totalClick, $$(".special-item").length - 1);
-
-    $$(".special-item").forEach((item) => {
-        const translateCss = `calc(-${100 * totalClick}%
-            - ${30 * totalClick}px)`;
-        item.style.translate = translateCss;
-    });
-
-    dots.forEach((dot) => {
-        dot.classList.remove("active");
-        dots[totalClick].classList.add("active");
-    });
-};
+jsArrow();
 
 // Làm phần About: play video
 const playVideo = $(".video-play__btn");

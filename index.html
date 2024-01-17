@@ -197,7 +197,7 @@
                     <div class="row row-cols-3 row-cols-lg-1 special__list">
                         <!-- Item 1 -->
                         <div class="col">
-                            <article class="special-item">
+                            <article class="special-item" id="special-item">
                                 <div class="special-item__icon-wrap">
                                     <img src="./assets/icons/light.png" alt="" class="special-item__icon">
                                 </div>
@@ -211,7 +211,7 @@
 
                         <!-- Item 2 -->
                         <div class="col">
-                            <article class="special-item">
+                            <article class="special-item" id="special-item">
                                 <div class="special-item__icon-wrap">
                                     <img src="./assets/icons/design.png" alt="" class="special-item__icon">
                                 </div>
@@ -225,7 +225,7 @@
 
                         <!-- Item 3 -->
                         <div class="col">
-                            <article class="special-item ">
+                            <article class="special-item" id="special-item">
                                 <div class="special-item__icon-wrap">
                                     <img src="./assets/icons/phone.png" alt="" class="special-item__icon">
                                 </div>
@@ -238,14 +238,16 @@
                         </div>
                     </div>
 
-                    <div class="special__arrow arrow-left hide">
+                    <div class="special__arrow arrow-left js-move hide" direction-arrow="left"
+                        target-move="#special-item" section="special" target-dot="#special-dot">
                         <img src="./assets/icons/chevron-left.svg" alt="" class="arrow__icon d-none d-lg-block">
                     </div>
-                    <div class="special__arrow arrow-right show">
+                    <div class="special__arrow arrow-right js-move show" direction-arrow="right"
+                        target-move="#special-item" section="special" target-dot="#special-dot">
                         <img src="./assets/icons/chevron-right.svg" alt="" class="arrow__icon d-none d-lg-block">
                     </div>
 
-                    <div class="dots d-none d-lg-flex special__dot">
+                    <div class="dots d-none d-lg-flex special__dot" id="special-dot">
                         <div class="dot active"></div>
                         <div class="dot"></div>
                         <div class="dot"></div>
@@ -260,7 +262,9 @@
                 <div class="project__wrap">
                     <div class="project__head">
                         <h2 class="section-heading project__heading">
-                            Take a look at my recent projects
+                            Take a look at
+                            <br>
+                            my recent projects
                         </h2>
                         <p class="section-desc project__desc">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut
@@ -397,6 +401,143 @@
                     </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Feedback -->
+        <section class="feedback">
+            <div class="container">
+                <div class="feedback__wrap">
+                    <div class="row">
+                        <div class="col-6 offset-3 col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-sm-12 offset-sm-0">
+                            <h2 class="section-heading feedback__heading">What people says</h2>
+                            <p class="section-desc feedback__desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut
+                                elementum turpis.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="row row-cols-1 feedback__list">
+                        <!-- Item 1 -->
+                        <div class="col">
+                            <article class="feedback-item" id="feedback-item">
+                                <blockquote class="feedback-item__quote">
+                                    “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                    culpa.”
+                                </blockquote>
+                                <div class="feedback-item__row">
+                                    <img src="./assets/images/feedback-user-1.jpg" alt="" class="feedback-item__img">
+                                    <h3 class="feedback-item__name">Joe Elia</h3>
+                                </div>
+                                <p class="feedback-item__desc">
+                                    User Interface Design at PCL Lab
+                                </p>
+                            </article>
+                        </div>
+
+                        <!-- Item 2 -->
+                        <div class="col">
+                            <article class="feedback-item" id="feedback-item">
+                                <blockquote class="feedback-item__quote">
+                                    “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                    dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                                    in
+                                    culpa.”
+                                </blockquote>
+                                <div class="feedback-item__row">
+                                    <img src="./assets/images/feedback-user-2.jpg" alt="" class="feedback-item__img">
+                                    <h3 class="feedback-item__name">Leanne Graham</h3>
+                                </div>
+                                <p class="feedback-item__desc">
+                                    User Interface Design at PCL Lab
+                                </p>
+                            </article>
+                        </div>
+
+                        <!-- Item 3 -->
+                        <div class="col">
+                            <article class="feedback-item" id="feedback-item">
+                                <blockquote class="feedback-item__quote">
+                                    “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                    dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                                    in
+                                    culpa.”
+                                </blockquote>
+                                <div class="feedback-item__row">
+                                    <img src="./assets/images/feedback-user-3.jpg" alt="" class="feedback-item__img">
+                                    <h3 class="feedback-item__name">Ervin Howell</h3>
+                                </div>
+                                <p class="feedback-item__desc">
+                                    User Interface Design at PCL Lab
+                                </p>
+                            </article>
+                        </div>
+
+                        <!-- Item 4 -->
+                        <div class="col">
+                            <article class="feedback-item" id="feedback-item">
+                                <blockquote class="feedback-item__quote">
+                                    “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                    dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                                    in
+                                    culpa.”
+                                </blockquote>
+                                <div class="feedback-item__row">
+                                    <img src="./assets/images/feedback-user-4.jpg" alt="" class="feedback-item__img">
+                                    <h3 class="feedback-item__name">Kurtis Weissnat</h3>
+                                </div>
+                                <p class="feedback-item__desc">
+                                    User Interface Design at PCL Lab
+                                </p>
+                            </article>
+                        </div>
+
+                        <!-- Item 5 -->
+                        <div class="col">
+                            <article class="feedback-item" id="feedback-item">
+                                <blockquote class="feedback-item__quote">
+                                    “Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                                    dolore eu
+                                    fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
+                                    in
+                                    culpa.”
+                                </blockquote>
+                                <div class="feedback-item__row">
+                                    <img src="./assets/images/feedback-user-5.jpg" alt="" class="feedback-item__img">
+                                    <h3 class="feedback-item__name">Clementina DuBuque</h3>
+                                </div>
+                                <p class="feedback-item__desc">
+                                    User Interface Design at PCL Lab
+                                </p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="feedback__arrow arrow-left js-move hide" direction-arrow="left"
+                        target-move="#feedback-item" section="feedback" target-dot="#feedback-dot">
+                        <img src="./assets/icons/chevron-left.svg" alt="" class="arrow__icon">
+                    </div>
+                    <div class="feedback__arrow arrow-right js-move show" direction-arrow="right"
+                        target-move="#feedback-item" section="feedback" target-dot="#feedback-dot">
+                        <img src="./assets/icons/chevron-right.svg" alt="" class="arrow__icon">
+                    </div>
+
+                    <div class="dots feedback__dot" id="feedback-dot">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+
+            <img src="./assets/images/feedback-decor-1.svg" alt="" class="feedback__decor-left">
+            <img src="./assets/images/feedback-decor-2.svg" alt="" class="feedback__decor-right">
         </section>
 
     </main>
