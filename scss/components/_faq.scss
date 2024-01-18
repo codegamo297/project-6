@@ -1,0 +1,115 @@
+@use "../abstracts";
+
+.faq {
+    margin-top: 95px;
+
+    &__wrap {
+    }
+
+    &__list {
+        margin-top: 20px;
+
+        @include abstracts.screen(lg) {
+            margin-top: 10px;
+        }
+    }
+
+    &-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        position: relative;
+        width: 86%;
+        padding-top: 60px;
+        border-bottom: 2px solid #08182f;
+        overflow: hidden;
+
+        @include abstracts.screen(lg) {
+            width: 100%;
+            padding-top: 40px;
+        }
+
+        &__info {
+            padding-left: 20px;
+
+            @include abstracts.screen(md) {
+                padding-left: 0;
+            }
+        }
+
+        &__question {
+            font-size: 3.2rem;
+            font-weight: 500;
+            line-height: 125%;
+            letter-spacing: -1.28px;
+            transition: color 0.25s;
+
+            @include abstracts.screen(lg) {
+                font-size: 2.4rem;
+                letter-spacing: -0.96px;
+            }
+        }
+
+        &__respond {
+            margin-top: 23px;
+            width: 487px;
+            color: #51586a;
+            font-size: 1.8rem;
+            line-height: 166.667%;
+            height: 0;
+            visibility: hidden;
+            transition: height, visibility;
+            transition-timing-function: ease-in-out;
+            transition-duration: 0.5s;
+
+            @include abstracts.screen(lg) {
+                margin-top: 15px;
+                font-size: 1.6rem;
+                line-height: 162.5%;
+            }
+
+            @include abstracts.screen(md) {
+                width: 390px;
+            }
+
+            @include abstracts.screen(md) {
+                width: 280px;
+            }
+        }
+
+        &__icon-minus,
+        &__icon-plus {
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+            translate: 0 -4px;
+        }
+
+        &__icon-minus {
+            display: none;
+        }
+
+        &:has(&__input:checked) {
+            border-color: #5d3bee;
+        }
+
+        &__input:checked ~ &__info &__question {
+            color: #5d3bee;
+        }
+
+        &__input:checked ~ &__info &__respond {
+            height: 80px;
+            visibility: visible;
+        }
+
+        &__input:checked ~ label &__icon-minus {
+            display: inline-block;
+        }
+
+        &__input:checked ~ label &__icon-plus {
+            display: none;
+        }
+    }
+}

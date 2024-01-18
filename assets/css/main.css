@@ -2431,4 +2431,108 @@ button {
   right: 0;
 }
 
+.faq {
+  margin-top: 95px;
+}
+.faq__list {
+  margin-top: 20px;
+}
+@media (max-width: 991.98px) {
+  .faq__list {
+    margin-top: 10px;
+  }
+}
+.faq-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 86%;
+  padding-top: 60px;
+  border-bottom: 2px solid #08182f;
+  overflow: hidden;
+}
+@media (max-width: 991.98px) {
+  .faq-item {
+    width: 100%;
+    padding-top: 40px;
+  }
+}
+.faq-item__info {
+  padding-left: 20px;
+}
+@media (max-width: 767.98px) {
+  .faq-item__info {
+    padding-left: 0;
+  }
+}
+.faq-item__question {
+  font-size: 3.2rem;
+  font-weight: 500;
+  line-height: 125%;
+  letter-spacing: -1.28px;
+  transition: color 0.25s;
+}
+@media (max-width: 991.98px) {
+  .faq-item__question {
+    font-size: 2.4rem;
+    letter-spacing: -0.96px;
+  }
+}
+.faq-item__respond {
+  margin-top: 23px;
+  width: 487px;
+  color: #51586a;
+  font-size: 1.8rem;
+  line-height: 166.667%;
+  height: 0;
+  visibility: hidden;
+  transition: height, visibility;
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+}
+@media (max-width: 991.98px) {
+  .faq-item__respond {
+    margin-top: 15px;
+    font-size: 1.6rem;
+    line-height: 162.5%;
+  }
+}
+@media (max-width: 767.98px) {
+  .faq-item__respond {
+    width: 390px;
+  }
+}
+@media (max-width: 767.98px) {
+  .faq-item__respond {
+    width: 280px;
+  }
+}
+.faq-item__icon-minus, .faq-item__icon-plus {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  translate: 0 -4px;
+}
+.faq-item__icon-minus {
+  display: none;
+}
+.faq-item:has(.faq-item__input:checked) {
+  border-color: #5d3bee;
+}
+.faq-item__input:checked ~ .faq-item__info .faq-item__question {
+  color: #5d3bee;
+}
+.faq-item__input:checked ~ .faq-item__info .faq-item__respond {
+  height: 80px;
+  visibility: visible;
+}
+.faq-item__input:checked ~ label .faq-item__icon-minus {
+  display: inline-block;
+}
+.faq-item__input:checked ~ label .faq-item__icon-plus {
+  display: none;
+}
+
 /*# sourceMappingURL=main.css.map */
