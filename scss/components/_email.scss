@@ -30,8 +30,10 @@
         line-height: 136.364%;
         text-decoration-line: underline;
 
-        @include abstracts.screen(lg) {
-            display: none;
+        &--header {
+            @include abstracts.screen(lg) {
+                display: none;
+            }
         }
     }
 }

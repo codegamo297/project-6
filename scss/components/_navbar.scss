@@ -1,101 +1,134 @@
 @use "../abstracts";
 
 .navbar {
-    @include abstracts.screen(lg) {
-        position: fixed;
-        inset: 0 0 0 50%;
-        background: #fff;
-        border-radius: 30px 0 0 30px;
-        translate: 100%;
-        z-index: 9;
-        transition: translate 0.5s;
-    }
-
-    @include abstracts.screen(md) {
-        inset: 0 0 0 40%;
-    }
-
-    @include abstracts.screen(sm) {
-        inset: 0 0 0 30%;
-    }
-
-    &__close-btn {
-        display: none;
-
-        @include abstracts.screen(lg) {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-left: auto;
-            padding: 40px 40px 20px 40px;
-
-            width: 36px;
-            height: 36px;
-        }
-
-        img {
-            filter: brightness(0) saturate(100%) invert(40%) sepia(0%)
-                saturate(1%) hue-rotate(70deg) brightness(96%) contrast(82%);
-        }
-    }
-
-    &__list {
-        display: flex;
-        align-items: center;
-        margin-left: -21px;
-        margin-right: -21px;
-
-        @include abstracts.screen(lg) {
-            margin-top: 20px;
-            flex-direction: column;
-        }
-    }
-
-    &__item {
-        padding: 4px 21px;
-
-        @include abstracts.screen(lg) {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            width: 100%;
-            padding: 0;
-            height: 50px;
-        }
-    }
-
-    &__link {
-        color: #51586a;
-        font-size: 1.8rem;
-
-        @include abstracts.screen(lg) {
-            width: 100%;
-            text-align: center;
-        }
-    }
-
-    &__overlay {
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility, opacity;
-        transition-duration: 0.5s;
-
+    &-header {
         @include abstracts.screen(lg) {
             position: fixed;
-            inset: 0;
-            background: rgba($color: #000000, $alpha: 0.4);
-            z-index: 8;
+            inset: 0 0 0 50%;
+            background: #fff;
+            border-radius: 30px 0 0 30px;
+            translate: 100%;
+            z-index: 9;
+            transition: translate 0.5s;
+        }
+
+        @include abstracts.screen(md) {
+            inset: 0 0 0 40%;
+        }
+
+        @include abstracts.screen(sm) {
+            inset: 0 0 0 30%;
+        }
+
+        &__close-btn {
+            display: none;
+
+            @include abstracts.screen(lg) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: auto;
+                padding: 40px 40px 20px 40px;
+
+                width: 36px;
+                height: 36px;
+            }
+
+            img {
+                filter: brightness(0) saturate(100%) invert(40%) sepia(0%)
+                    saturate(1%) hue-rotate(70deg) brightness(96%) contrast(82%);
+            }
+        }
+
+        &__list {
+            display: flex;
+            align-items: center;
+            margin-left: -21px;
+            margin-right: -21px;
+
+            @include abstracts.screen(lg) {
+                margin-top: 20px;
+                flex-direction: column;
+            }
+        }
+
+        &__item {
+            padding: 4px 21px;
+
+            @include abstracts.screen(lg) {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                width: 100%;
+                padding: 0;
+                height: 50px;
+            }
+        }
+
+        &__link {
+            color: #51586a;
+            font-size: 1.8rem;
+
+            @include abstracts.screen(lg) {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        &__overlay {
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility, opacity;
+            transition-duration: 0.5s;
+
+            @include abstracts.screen(lg) {
+                position: fixed;
+                inset: 0;
+                background: rgba($color: #000000, $alpha: 0.4);
+                z-index: 8;
+            }
+        }
+
+        &.show {
+            translate: 0%;
+            box-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
+        }
+
+        &.show ~ &__overlay {
+            visibility: visible;
+            opacity: 1;
         }
     }
 
-    &.show {
-        translate: 0%;
-        box-shadow: 0px 40px 90px 20px rgba(200, 200, 200, 0.4);
-    }
+    &-footer {
+        &__list {
+            display: flex;
+            align-items: center;
+            margin-left: -21px;
+            margin-right: -21px;
 
-    &.show ~ &__overlay {
-        visibility: visible;
-        opacity: 1;
+            @media (max-width: 400.98px) {
+                margin-left: -14px;
+                margin-right: -14px;
+            }
+        }
+
+        &__item {
+            padding: 4px 21px;
+
+            @media (max-width: 400.98px) {
+                padding: 4px 14px;
+            }
+        }
+
+        &__link {
+            color: #51586a;
+            font-size: 1.8rem;
+
+            @include abstracts.screen(sm) {
+                font-size: 1.6rem;
+            }
+        }
     }
 }

@@ -51,37 +51,37 @@
                     <div class="email__img">
                         <img src="./assets/images/envelop.png" alt="" class="email__icon">
                     </div>
-                    <span class="email__link">hi@arif.interactive</span>
+                    <span class="email__link email__link--header">hi@arif.interactive</span>
                 </a>
 
                 <!-- Logo -->
-                <a href="/" class="logo header__logo">
+                <a href="./" class="logo header__logo">
                     <img src="./assets/images/logo.png" alt="logo" class="logo__img">
                 </a>
 
                 <!-- Navbar -->
                 <div>
-                    <nav id="navbar" class="navbar hide">
-                        <button class="navbar__close-btn js-toggle" toggle-target="#navbar">
+                    <nav id="navbar" class="navbar navbar-header hide">
+                        <button class="navbar-header__close-btn js-toggle" toggle-target="#navbar">
                             <img src="./assets/icons/arrow-right.svg" alt="">
                         </button>
 
-                        <ul class="navbar__list">
-                            <li class="navbar__item">
-                                <a href="#!" class="navbar__link">Projects</a>
+                        <ul class="navbar-header__list">
+                            <li class="navbar-header__item">
+                                <a href="#!" class="navbar-header__link">Projects</a>
                             </li>
-                            <li class="navbar__item">
-                                <a href="#!" class="navbar__link">Journey</a>
+                            <li class="navbar-header__item">
+                                <a href="#!" class="navbar-header__link">Journey</a>
                             </li>
-                            <li class="navbar__item">
-                                <a href="#!" class="navbar__link">Service</a>
+                            <li class="navbar-header__item">
+                                <a href="#!" class="navbar-header__link">Service</a>
                             </li>
-                            <li class="navbar__item">
-                                <a href="#!" class="navbar__link">Contact</a>
+                            <li class="navbar-header__item">
+                                <a href="#!" class="navbar-header__link">Contact</a>
                             </li>
                         </ul>
                     </nav>
-                    <div class="navbar__overlay js-toggle" toggle-target="#navbar"></div>
+                    <div class="navbar-header__overlay js-toggle" toggle-target="#navbar"></div>
                 </div>
             </div>
         </div>
@@ -633,9 +633,119 @@
                 </div>
             </div>
         </section>
+
+        <!-- Gallery -->
+        <section class="gallery">
+            <div class="container">
+                <div class="gallery__wrap">
+                    <div class="row">
+                        <div class="col-6 offset-3 col-lg-8 offset-lg-2 col-md-10 offset-md-1 col-sm-12 offset-sm-0">
+                            <h2 class="section-heading gallery__heading">My atmosphere</h2>
+                            <p class="section-desc gallery__desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut
+                                elementum turpis.
+                            </p>
+                            <span class="gallery__inter">@interaction_arif</span>
+                        </div>
+                    </div>
+                    <div class="row row-cols-3 row-cols-lg-1 gallery__list">
+                        <div class="col">
+                            <img src="./assets/images/gallery-1.png" alt="" class="gallery__img" id="gallery-item">
+                        </div>
+                        <div class="col">
+                            <img src="./assets/images/gallery-2.png" alt="" class="gallery__img" id="gallery-item">
+                        </div>
+                        <div class="col">
+                            <img src="./assets/images/gallery-3.png" alt="" class="gallery__img" id="gallery-item">
+                        </div>
+                    </div>
+
+                    <div class="gallery__arrow arrow-left js-move hide" direction-arrow="left"
+                        target-move="#gallery-item" section="gallery" target-dot="#gallery-dot">
+                        <img src="./assets/icons/chevron-left.svg" alt="" class="arrow__icon d-none d-lg-block">
+                    </div>
+                    <div class="gallery__arrow arrow-right js-move show" direction-arrow="right"
+                        target-move="#gallery-item" section="gallery" target-dot="#gallery-dot">
+                        <img src="./assets/icons/chevron-right.svg" alt="" class="arrow__icon d-none d-lg-block">
+                    </div>
+
+                    <div class="dots d-none d-lg-flex gallery__dot" id="gallery-dot">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta__wrap">
+                    <img src="./assets/icons/party-face.svg" alt="" class="cta__icon">
+                    <h2 class="section-heading cta__heading">
+                        Got a project?
+                        <br class="d-none d-md-block">
+                        Let’s talk
+                    </h2>
+                    <p class="section-desc cta__desc">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut
+                        elementum turpis.
+                    </p>
+                    <button class="btn cta__btn">Book a Call</button>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="container">
+                <div class="footer-top">
+                    <!-- Email -->
+                    <a href="mailto:hi@arif.interactive" class="email">
+                        <div class="email__img">
+                            <img src="./assets/images/envelop.png" alt="" class="email__icon">
+                        </div>
+                        <span class="email__link">hi@arif.interactive</span>
+                    </a>
+
+                    <!-- Logo -->
+                    <a href="./" class="logo footer__logo">
+                        <img src="./assets/images/logo.png" alt="logo" class="logo__img">
+                    </a>
+
+                    <!-- Navbar -->
+                    <nav class="navbar-footer">
+                        <ul class="navbar-footer__list">
+                            <li class="navbar-footer__item">
+                                <a href="#!" class="navbar-footer__link">Projects</a>
+                            </li>
+                            <li class="navbar-footer__item">
+                                <a href="#!" class="navbar-footer__link">Journey</a>
+                            </li>
+                            <li class="navbar-footer__item">
+                                <a href="#!" class="navbar-footer__link">Service</a>
+                            </li>
+                            <li class="navbar-footer__item">
+                                <a href="#!" class="navbar-footer__link">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-bottom__copyright">
+                    ©interactiveArif 2021. All rights reserved.
+                </p>
+                <div class="footer-bottom__right">
+                    <p class="footer-bottom__policy">Privacy Policy</p>
+                    <p class="footer-bottom__terms">Terms of Conditions</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 <script src="./app.js"></script>
 

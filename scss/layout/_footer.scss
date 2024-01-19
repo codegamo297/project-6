@@ -1,0 +1,108 @@
+@use "../abstracts";
+
+.footer {
+    margin-top: 50px;
+    padding-bottom: 30px;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 78px;
+        left: 2%;
+        width: 96%;
+        height: 1px;
+        background: #0c0720;
+        opacity: 0.2;
+
+        @include abstracts.screen(md) {
+            left: 0%;
+            width: 100%;
+        }
+
+        @media (max-width: 375.98px) {
+            bottom: 110px;
+        }
+    }
+
+    &__container {
+        width: min(1330px, 100% - 48px);
+        margin: 0 auto;
+
+        @include abstracts.screen(md) {
+            width: min(1330px, 100% - 40px);
+        }
+    }
+
+    &-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+
+        @include abstracts.screen(lg) {
+            padding-top: 160px;
+            flex-direction: column-reverse;
+            gap: 58px;
+        }
+    }
+
+    &__logo {
+        @include abstracts.screen(lg) {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            translate: -50%;
+        }
+    }
+
+    &-bottom {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        @include abstracts.screen(lg) {
+            flex-direction: column-reverse;
+            gap: 50px;
+        }
+
+        &__right {
+            display: flex;
+            gap: 36px;
+        }
+
+        &__copyright,
+        &__terms,
+        &__policy {
+            font-size: 1.8rem;
+            line-height: 166.667%;
+            opacity: 0.6;
+        }
+
+        &__copyright {
+            text-align: center;
+        }
+
+        &__terms,
+        &__policy {
+            letter-spacing: -0.54px;
+        }
+
+        &__policy {
+            position: relative;
+
+            &::after {
+                content: "";
+                position: absolute;
+                right: -23px;
+                top: 50%;
+                translate: 0 -50%;
+                height: 14px;
+                width: 1px;
+                background: #525771;
+                opacity: 0.6;
+            }
+        }
+    }
+}

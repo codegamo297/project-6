@@ -1,0 +1,71 @@
+@use "../abstracts";
+
+.cta {
+    margin-top: 140px;
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        padding: 68px 0;
+        background: url("../../assets/images/cta-bg.png") no-repeat 50% top;
+        background-size: cover;
+
+        @include abstracts.screen(lg) {
+            padding: 36px 0;
+        }
+    }
+
+    &__icon {
+        margin-bottom: 10px;
+        display: block;
+        width: 90px;
+        height: 90px;
+
+        @include abstracts.screen(lg) {
+            width: 60px;
+            height: 60px;
+        }
+
+        @include abstracts.screen(md) {
+            width: 48px;
+            height: 48px;
+        }
+    }
+
+    &__heading,
+    &__desc {
+        text-align: center;
+    }
+
+    &__desc {
+        width: 49%;
+        margin-top: 20px;
+        text-align: center;
+
+        @include abstracts.screen(lg) {
+            width: 70%;
+            margin-top: 10px;
+        }
+
+        @include abstracts.screen(md) {
+            width: 84%;
+        }
+
+        @include abstracts.screen(sm) {
+            width: 100%;
+        }
+    }
+
+    &__btn {
+        margin-top: 40px;
+
+        @include abstracts.screen(lg) {
+            margin-top: 30px;
+            width: 147px;
+            height: 55px;
+            font-size: 1.6rem;
+            line-height: 187.5%;
+        }
+    }
+}
